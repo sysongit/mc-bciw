@@ -1,0 +1,5 @@
+name: BigChestIsWatching
+version: 0.1
+author: Systemic_
+main: tk.rmrf.sys.bciw.Main
+api-version: 1.16
