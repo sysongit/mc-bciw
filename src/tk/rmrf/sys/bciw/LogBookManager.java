@@ -37,6 +37,21 @@ public class LogBookManager {
         return recipe;
     }
 
+    private ArrayList<String> getLore(String name){
+        ArrayList<String> lore = new ArrayList<>();
+
+        lore.add(ChatColor.WHITE + "Owner: " + ChatColor.RED + name);
+        lore.add("");
+        lore.add(ChatColor.YELLOW + "Sneak + left-click to set owner");
+        lore.add(ChatColor.YELLOW + "Sneak + double left-click to clear");
+        lore.add(ChatColor.YELLOW + "Sneak + triple left-click to remove owner");
+        lore.add("");
+        lore.add(ChatColor.WHITE + "" + ChatColor.ITALIC + "Place in chest for best results");
+        lore.add("");
+        lore.add(ChatColor.GRAY + "" + ChatColor.ITALIC + "Item added by BigChestIsWatching");
+        return (lore);
+    }
+
     public ItemStack getLogBookItem(){
         ItemStack item = new ItemStack(Material.WRITTEN_BOOK);
 
@@ -46,18 +61,7 @@ public class LogBookManager {
         meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 
-        ArrayList<String> lore = new ArrayList<>();
-
-        lore.add(ChatColor.WHITE + "Owner: " + ChatColor.RED + "Uninitialized");
-        lore.add("");
-        lore.add(ChatColor.YELLOW + "Sneak + left-click to set owner");
-        lore.add(ChatColor.YELLOW + "Sneak + double left-click to clear");
-        lore.add(ChatColor.YELLOW + "Sneak + triple left-click to remove owner");
-        lore.add("");
-        lore.add(ChatColor.WHITE + "" + ChatColor.ITALIC + "Place in chest for best results");
-        lore.add("");
-        lore.add(ChatColor.GRAY + "" + ChatColor.ITALIC + "Item added by BigChestIsWatching");
-
+        ArrayList<String> lore = getLore("Uninitialized");
         meta.setLore(lore);
 
         item.setItemMeta(meta);
